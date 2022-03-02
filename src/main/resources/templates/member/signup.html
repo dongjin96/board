@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="header.html::header"></div>
+<script th:src="@{/js/member.js}"></script>
+<div class="container">
+    <span class="offset-4 col-md-4">
+    <h3>회원가입 페이지</h3>
+    </span>
+        <div class="col-md-5" style="margin-top: 20px;">
+            <form method="post" action="/member/signupcontroller">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-4" id="mid" name="mid" placeholder="아이디를 입력하세요.">
+                    <label for="floatingInput" id="idcheck">아이디를 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-4" id="mpassword" name="mpassword" placeholder="비밀번호를 입력하세요.">
+                    <label for="floatingInput" id="passwordcheck">비밀번호를 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-4" id="mpasswordconfirm" name="mpasswordconfirm" placeholder="한번더 비밀번호를 입력하세요.">
+                    <label for="floatingInput" id="passwordconfirmcheck">한번더 비밀번호를 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-4" id="mname" name="mname"placeholder="이름을 입력하세요.">
+                    <label for="floatingInput" id="namecheck">이름을 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+                <div class=" mb-3 text-center ">
+                    <input type="radio"  name="msex" id="m_sex1" value="남" checked="checked">남자
+                    <input type="radio"  name="msex" id="m_sex2"  value="여" >여자
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-4" id="mphone" name="mphone" placeholder="(-제외)연락처를 입력하세요.">
+                    <label for="floatingInput" id="phonecheck">연락처를 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-4" id="memail" name="memail" placeholder="이메일을 입력하세요.">
+                    <label for="floatingInput" id="emailcheck">이메일을 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-4" id="mage" name="mage"  placeholder="나이를 입력하세요.">
+                    <label for="floatingInput">나이를 입력하세요.<span class="text-danger">*</span></label>
+                </div>
+
+                <div class="row">   <!-- 3:8 -->
+                    <div class="col-md-3 m-2"> <label>주소</label><span class="text-danger">*</span> </div>
+                    <div class="col-md-8">
+                        <div class="row mb-2">
+                            <div class="col-md-6"> <input type="text" id="sample4_postcode" name="address1" placeholder="우편번호" class="form-control"></div>
+                            <div class="col-md-6"> <input type="button"  onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="form-control"></div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-6"> <input type="text" id="sample4_roadAddress" name="address2" placeholder="도로명주소" class="form-control"> </div>
+                            <div class="col-md-6"> <input type="text" id="sample4_jibunAddress" name="address3" placeholder="지번주소" class="form-control"> </div>
+                        </div>
+                        <input type="text" id="sample4_detailAddress" name="address4" placeholder="상세주소" class="form-control">
+                        <div class="text-center" id="addresscheck" style="display: none;"></div>
+                    </div>
+                </div>
+                <button  class="form-control p-3 my-3" type="submit">회원가입</button>
+                <input id="submit1" type="hidden" class="form-control p-3 my-3" value="회원가입">
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
